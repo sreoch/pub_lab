@@ -15,5 +15,11 @@ class Pub:
         return len(self.drinks)
 
     def sell_drink_to_customer(self, drink, customer):
-        customer.wallet_decrease(drink.price)
-        self.increase_till(drink.price)
+        if self.check_customer_age:
+            customer.wallet_decrease(drink.price)
+            self.increase_till(drink.price)
+        
+
+
+    def check_customer_age(self, customer):
+        return customer.age >= 18
