@@ -17,9 +17,8 @@ class Pub:
     def sell_drink_to_customer(self, drink, customer):
         if self.check_customer_age(customer) and self.check_customer_drunkness(customer):
             customer.wallet_decrease(drink.price)
-            self.increase_till(drink.price)
-            customer.increase_drunkness_level(drink.alcohol_level)
-        
+            self.increase_till(drink.price)     
+            customer.increase_drunkness_level(drink)  
 
     def check_customer_age(self, customer):
         return customer.age >= 18
