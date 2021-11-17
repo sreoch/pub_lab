@@ -27,8 +27,6 @@ class TestPub(unittest.TestCase):
         self.assertEqual(1, self.pub.stock_count())
 
     def test_sell_drink_to_customer(self):
-        self.pub.increase_till(5.50)
-        self.customer.wallet_decrease(5.50)
-        
+        self.pub.sell_drink_to_customer(self.drink, self.customer)
         self.assertEqual(105.50, self.pub.till)
         self.assertEqual(29.50, self.customer.wallet)

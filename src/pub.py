@@ -14,6 +14,6 @@ class Pub:
     def stock_count(self):
         return len(self.drinks)
 
-    def sell_drink_to_customer(self, amount, customer):
-        customer.wallet_decrease(amount)
-        self.increase_till(amount)
+    def sell_drink_to_customer(self, drink, customer):
+        customer.wallet_decrease(drink.price)
+        self.increase_till(drink.price)
