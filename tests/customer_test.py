@@ -9,6 +9,6 @@ class TestCustomer(unittest.TestCase):
     def test_drink_has_name(self):
         self.assertEqual("Noah Clark", self.customer.name)
 
-    def test_increase_till(self):
+    def test_wallet_decrease(self):
         self.customer.wallet_decrease(2.50)
         self.assertEqual(32.50, self.customer.wallet)
