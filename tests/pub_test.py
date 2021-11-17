@@ -27,10 +27,17 @@ class TestPub(unittest.TestCase):
         self.pub.stock_count()
         self.assertEqual(1, self.pub.stock_count())
 
+    def test_check_customer_age_okay(self):
+        self.assertEqual(True, self.pub.check_customer_age(self.customer))
+
+    def test_check_customer_age_not_okay(self):
+        self.assertEqual(False, self.pub.check_customer_age(self.customer_2))
+
     def test_sell_drink_to_customer_is_over_18(self):
         self.pub.sell_drink_to_customer(self.drink, self.customer)
         self.assertEqual(105.50, self.pub.till)
         self.assertEqual(29.50, self.customer.wallet)
+
 
     def test_sell_drink_to_customer_is_under_18(self):
         self.pub.sell_drink_to_customer(self.drink, self.customer_2)
